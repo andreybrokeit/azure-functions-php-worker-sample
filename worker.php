@@ -4,7 +4,7 @@
     class Logger {
         public $messages = [];
         function information(string $msg) {
-            array_push($this->messages, $msg);
+            $this->messages[] = $msg;
         }
     }
 
@@ -23,8 +23,8 @@
     set_exception_handler(function ($exception) use ($context) {
         $context->log->information($exception);
         $response = [
-            'Outputs' => NULL,
-            'ReturnValue' => NULL,
+            'Outputs' => null,
+            'ReturnValue' => null,
             'Logs' => $context->log->messages
         ];
         echo(json_encode($response));
@@ -54,4 +54,3 @@
 
     header("Content-type: application/json");
     echo(json_encode($response));
-?>

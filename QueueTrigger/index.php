@@ -6,4 +6,3 @@
         // save queue item to blob storage
         $context->outputs['outputBlob'] = $queueItem;
     }
-?>
