@@ -1,5 +1,6 @@
 <?php
-    function run(FunctionContext $context) {
+    function run(FunctionContext $context):array
+    {
         $req = $context->inputs['req'];
         //$context->log->information(json_encode($req));
         $context->log->information('Http trigger invoked');
